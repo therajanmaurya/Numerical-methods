@@ -25,10 +25,10 @@ int main()
     *   Enter the value of x0 and x1 ;
     **/
 
-    cout << "Enter value of x0 : "
+    cout << "Enter value of x0 : ";
     cin >> x0 ;
-    cout << "Enter value of x1 : "
-    cin >> x1 :
+    cout << "Enter value of x1 : ";
+    cin >> x1 ;
 
     cout<<"x0 = " << x0 <<endl<< " | x1 = " << x1<<endl ;
 
