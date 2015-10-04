@@ -42,6 +42,10 @@ float epsilon = 0.0001;
 
 
             /**
+             * Sign of f at a
+             */
+            double sfa = f(a);
+            /**
             *Running the do while loop till that
             * 1. abs(a-b) > epsilon
             * 2. f(c) = 0 where c is any point between [a,b]
@@ -49,25 +53,40 @@ float epsilon = 0.0001;
             **/
             do {
 
+
+
                 /**
                 *	mid point of interval [a,b] and again so on
                 **/
                 c = (a + b) / 2;
 
+
+                if(abs(b-a) < 2*epsilon)
+                {
+                    cout << "the root is : " << c << " Iteration " << count << endl         ;
+                    break;
+                }
+
+                /**
+                 * Sign of f at c
+                 */
+                float sfc = f(c) ;
+
                 cout << "Iteration Number : " << count << endl;
-                cout << "Value of a is :" << a << " Value of b is :" << b << " Value of c is :" << c << endl;
-                cout << "value of f(a) * f(b) : " << f(a) * f(b) << endl;
+                cout << "[a,b] :" << "[" << a << "," << b << "] " <<" c :" << c << endl;
+                cout << "value of f(a) * f(b) : " << f(a) * f(b) << " and f(c) : " << f(c) << endl;
 
                 /**
                 * Checking the f(a)*f(c) < 0;
                 * if yes than root lie between a and c ;
                 * if No  than root lie between c and b ;
                 **/
-                if (f(a) * f(c) < 0) {
+                if (sfa * sfc < 0) {
                     b = c;
                 }
                 else {
                     a = c;
+                    sfa = sfc ;
                 }
 
                 /**
