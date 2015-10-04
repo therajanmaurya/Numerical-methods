@@ -61,7 +61,11 @@ float epsilon = 0.0001;
                 c = (a + b) / 2;
 
 
-                if(abs(b-a) < 2*epsilon)
+                /**
+                * Checking abs value and epsilon and value of f at c if equal to zero than exit
+                **/
+
+                if(abs(b-a) < 2*epsilon || f(c) == 0)
                 {
                     cout << "the root is : " << c << " Iteration " << count << endl         ;
                     break;
@@ -93,18 +97,7 @@ float epsilon = 0.0001;
                 * Count for basically for counting the number of count ;
                 **/
                 count++;
-
-                /**
-                * abs value of (a-b);
-                **/
-                Abs = abs(a - b);
-            }
-
-
-                /**
-                * Checking abs value and epsilon and value of f at c if equal to zero than exit
-                **/
-            while (Abs > epsilon || f(c) == 0);
+            }while (true);
 
         }
 

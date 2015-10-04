@@ -1,77 +1,113 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
+
 /**
-*   Function for evaluation 
+*Function definition ;
+*
 **/
-float f (float x)
+float f(float x);
+float epsilon = 0.0001;
+float  c1 ;
+
+        int main() {
+
+            /**
+            * a and b are the interval like [a,b] and c is the mid point between a and b.
+            * Abs is the absolute value of (a-b) ;
+            **/
+            float a, b, c, Abs;
+
+            /**
+            *count is for counter for counting the number of iteration
+            **/
+            int count = 1;
+
+
+            /**
+            *Taking the user input for interval.
+            *Enter the value a and b or interval [a,b]
+            */
+            cout << "Enter the value of 'a' of interval [a,b] : ";
+            cin >> a;
+            cout << "Enter the value of 'b' of interval [a,b] : ";
+            cin >> b;
+            cout << "Finding Root in interval [" << a << "," << b << "]" << " using Bisection method" << endl;
+
+            /**
+             *  SetPrecision is the function to set maximum of digit to cout of any value
+             */
+            cout.precision(10);
+
+
+            /**
+             * Sign of f at a
+             */
+            double sfa = f(a);
+
+
+            /**
+            *Running the do while loop till that
+            * 1. abs(a-b) > epsilon
+            * 2. f(c) = 0 where c is any point between [a,b]
+            * these are two termination condition
+            * 3. c1 = c consecutive value of c is equal
+            **/
+            do {
+
+                /**
+                *   x intersection of function f
+                **/
+                c = b  - ((f(b)*(b-a))/(f(b) -f(a)));
+
+                /**
+                * Checking abs value and epsilon and value of f at c if equal to zero than exit
+                **/
+                if(abs(b-a) < 2*epsilon || f(c) == 0 || c1 ==  c)
+                {
+                    cout << "the root is : " << c << " Iteration " << count << endl         ;
+                    break;
+                }
+
+                /**
+                 * Sign of f at c
+                 */
+                float sfc = f(c) ;
+
+                cout << "Iteration Number : " << count << endl;
+                cout << "[a,b] :" << "[" << a << "," << b << "] " <<" c :" << c << endl;
+                cout << "value of f(a) * f(b) : " << f(a) * f(b) << " and f(c) : " << f(c) << endl;
+
+                /**
+                * Checking the f(a)*f(c) < 0;
+                * if yes than root lie between a and c ;
+                * if No  than root lie between c and b ;
+                **/
+                if (sfa * sfc < 0) {
+                    b = c;
+                }
+                else {
+                    a = c;
+                    sfa = sfc ;
+                }
+
+                /**
+                * Count for basically for counting the number of count ;
+                **/
+                count++;
+                c1 = c;
+
+            }while (true);
+
+        }
+
+/**
+*Function to evaluate the given function for finding the root .
+*
+**/
+float f(float x)
 {
-    return  tan(x)-x-1 ;
-}
-
-
-int main()
-{
-    /**
-    *   x1 , b are the initial guesses
-    **/ 
-    float x1,b,c;
-    cout.precision(15);
-
-    /**
-    *   count for counting number of iteration done after every execution of loop
-    *   iter is , how much iteration user want  
-    **/
-    int count=0,iter;
-
-    /**
-    *   Enter the initial guess x1;
-    **/
-    cout <<"Enter x1 = ";
-    cin >> x1;
-
-    /**
-    *   Enter the initial guess b ;
-    **/
-    cout <<"Enter b = ";
-    cin >> b;
-
-    /**
-    *   Enter the number iteration for execution of program
-    **/
-    cout <<"Enter number of iterations : ";
-    cin >> iter;
-
-    /**
-    *   execute the do while loop till that abs(x1 - b) is greater than epsilon and
-    *   f at c is equal to zero ;
-    **/
-    do
-    {
-        /**
-        *   Checking the user given iteration number is equal to count number or not  if true break
-        **/
-        if(count == iter)
-        {
-            break;
-        }
-
-
-        c = x1 - (f(x1)*((x1 - b) /( f(x1) - f(b))));
-
-        cout <<"x1=" << x1 <<"   b="<< b <<"   c=" << c <<"   " << "  f(x1)=" << f(x1) << "    f(b)=" << f(b) << "    f(c)=" << f(c) << endl << endl;
-
-
-        if( f(x1) * f(c) < 0 )
-        {
-            b = c;
-        }
-        else
-        {
-            x1 = c;
-        }
-        count++;
-    }while (  abs(x1 - b) > 0.00000000001 || f(c) ==0);
-
+    return pow(x, 4) - x - 10;
 }
