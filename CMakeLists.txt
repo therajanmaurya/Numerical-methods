@@ -3,5 +3,5 @@ project(Numerical_Method)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES Simpson_rule.cpp)
+set(SOURCE_FILES Gaussian_Integration_one_point.cpp)
 add_executable(Numerical_Method ${SOURCE_FILES})
