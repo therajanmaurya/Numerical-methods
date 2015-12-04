@@ -40,9 +40,9 @@ using namespace std;
         cin>>c;
         cout<<"a : "<<a<<" b : "<<b << " c : " <<c << " d : " <<d<<endl;
 
-        result = result + Ifunction(a,b,c,d,t11 ,t21) + Ifunction(a,b,c,d,t11 ,t22) + Ifunction(a,b,c,d,t12 ,t21)
+        result = Ifunction(a,b,c,d,t11 ,t21) + Ifunction(a,b,c,d,t11 ,t22) + Ifunction(a,b,c,d,t12 ,t21)
                 +Ifunction(a,b,c,d,t12 ,t22);
 
-        cout<<"Integration of Function is 2x + y*y : " << result;
+        cout<<"Integration of Function is X*X*X + y*y : " << result;
 
 }

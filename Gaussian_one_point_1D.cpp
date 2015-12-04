@@ -34,6 +34,6 @@ int main()
 
     double I = ((b-a)*Ifunction((a+b)/2));
 
-    cout<<"Integration of Function is X^2 : " << I;
+    cout<<"Integration of Function is 2*X : " << I;
 
 }

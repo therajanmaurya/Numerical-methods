@@ -9,7 +9,7 @@ using namespace std;
 /**
  *  Function to integrate
  */
-float Ifunction(double x , double y)
+double Ifunction(double x , double y)
 {
 
     return (2*x + y*y);
@@ -39,7 +39,7 @@ int main()
     double c1 = (a+b)/2;
     double c2 = (c+d)/2;
 
-    double I = ((b-a)*(d-c)*Ifunction((c1+c2)));
+    double I = ((b-a)*(d-c)*Ifunction(c1,c2));
     cout<<"Integration of Function is 2x + y*y : " << I;
 
 }

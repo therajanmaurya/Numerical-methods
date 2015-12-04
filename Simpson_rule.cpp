@@ -57,6 +57,6 @@ using namespace std;
             x+=h;
         }
 
-        cout<<"Integration of Function is X^2 : " << (h/3)*sum;
+        cout<<"Integration of Function is X*X*X : " << (h/3)*sum;
 
     }
