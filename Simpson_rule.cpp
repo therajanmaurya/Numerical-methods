@@ -12,7 +12,7 @@ using namespace std;
     float Ifunction(float x)
     {
 
-        return (x*x);
+        return (x*x*x);
     }
 
 

@@ -1,28 +1,19 @@
-#include <iostream>
-#include <cmath>
+    #include <iostream>
+    #include <cmath>
 
-using namespace std;
-/**
- * Created by rajan on 2/12/15.
- */
+    using namespace std;
+    /**
+     * Created by rajan on 2/12/15.
+     */
 
     /**
      *  Function to integrate
      */
     float Ifunction(float x)
     {
-        x = (c1 + (c2)*t );
 
         return (x*x);
     }
-
-    double conversion(float a , float b)
-    {
-        c1 = (a+b)/2;
-        c2 = (b-a)/2;
-    }
-
-
 
     float Tx(float x1 , float a , float b)
     {
@@ -31,15 +22,15 @@ using namespace std;
     }
 
 
-/**
-     * a is Upper limit
-     * b is lower limit
-     * n is number of interval for two point n=2
-     * h is interval gap
-     * w is the weight w1 w2 both one so assume w as single
-     * sum is area under the curve
-     */
-    float w = 1 ,a,b,n = 2,h,sum = 0 , c1, c2;
+    /**
+         * a is Upper limit
+         * b is lower limit
+         * n is number of interval for two point n=2
+         * h is interval gap
+         * w is the weight w1 w2 both one so assume w as single
+         * sum is area under the curve
+         */
+    float w = 1 ,a,b,n = 2,h,sum = 0 ;
     double x1 = -0.05 , x2 = 0.05;
 
     int main()

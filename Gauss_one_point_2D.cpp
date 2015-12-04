@@ -9,7 +9,7 @@ using namespace std;
 /**
  *  Function to integrate
  */
-float Ifunction(float x , float y)
+float Ifunction(double x , double y)
 {
 
     return (2*x + y*y);
