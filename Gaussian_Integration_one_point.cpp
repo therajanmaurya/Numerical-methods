@@ -11,9 +11,18 @@ using namespace std;
      */
     float Ifunction(float x)
     {
+        x = (c1 + (c2)*t );
 
         return (x*x);
     }
+
+    double conversion(float a , float b)
+    {
+        c1 = (a+b)/2;
+        c2 = (b-a)/2;
+    }
+
+
 
     float Tx(float x1 , float a , float b)
     {
@@ -30,7 +39,7 @@ using namespace std;
      * w is the weight w1 w2 both one so assume w as single
      * sum is area under the curve
      */
-    float w = 1 ,a,b,n = 2,h,sum = 0 ;
+    float w = 1 ,a,b,n = 2,h,sum = 0 , c1, c2;
     double x1 = -0.05 , x2 = 0.05;
 
     int main()
